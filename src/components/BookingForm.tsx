@@ -3,6 +3,16 @@ import { Send, Loader2, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
+
+// ============================================
+// EMAILJS CONFIGURATION - REPLACE THESE VALUES
+// ============================================
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';      // Replace with your EmailJS service ID
+const EMAILJS_ADMIN_TEMPLATE_ID = 'YOUR_ADMIN_TEMPLATE_ID';  // Template for spa notification
+const EMAILJS_CUSTOMER_TEMPLATE_ID = 'YOUR_CUSTOMER_TEMPLATE_ID';  // Template for customer confirmation
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';      // Replace with your EmailJS public key
+// ============================================
 
 export default function BookingForm() {
   const { t, isEthiopic } = useLanguage();
@@ -18,27 +28,95 @@ export default function BookingForm() {
     t('services.skincare'),
   ];
 
+  const formatDate = (dateString: string): string => {
+    if (!dateString) return 'Not specified';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  const formatTime = (timeString: string): string => {
+    if (!timeString) return 'Flexible';
+    const [hours, minutes] = timeString.split(':');
+    const hour = parseInt(hours);
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const displayHour = hour % 12 || 12;
+    return `${displayHour}:${minutes} ${ampm}`;
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // EmailJS integration placeholder
-    // To enable: Install @emailjs/browser, add your credentials below
-    // import emailjs from '@emailjs/browser';
-    // await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.currentTarget, 'YOUR_PUBLIC_KEY');
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-    // Simulate submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsLoading(false);
-    setIsSuccess(true);
-    toast.success(t('booking.success'));
+    // Extract form values
+    const customerName = formData.get('name') as string;
+    const customerPhone = formData.get('phone') as string;
+    const customerEmail = formData.get('email') as string || 'Not provided';
+    const service = formData.get('service') as string;
+    const date = formData.get('date') as string;
+    const time = formData.get('time') as string;
+    const notes = formData.get('notes') as string || 'No special requests';
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSuccess(false);
-      (e.target as HTMLFormElement).reset();
-    }, 3000);
+    // Format booking date and time
+    const bookingDate = formatDate(date);
+    const bookingTime = formatTime(time);
+    const submissionDate = new Date().toLocaleString('en-US', {
+      dateStyle: 'full',
+      timeStyle: 'short'
+    });
+
+    // Template parameters for both emails
+    const templateParams = {
+      customer_name: customerName,
+      customer_phone: customerPhone,
+      customer_email: customerEmail,
+      service_type: service,
+      booking_date: bookingDate,
+      booking_time: bookingTime,
+      special_notes: notes,
+      submission_date: submissionDate,
+    };
+
+    try {
+      // Send notification to spa (penguinnico5@gmail.com)
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_ADMIN_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      // Send confirmation to customer (only if email provided)
+      if (customerEmail && customerEmail !== 'Not provided') {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_CUSTOMER_TEMPLATE_ID,
+          templateParams,
+          EMAILJS_PUBLIC_KEY
+        );
+      }
+
+      setIsLoading(false);
+      setIsSuccess(true);
+      toast.success(t('booking.success'));
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSuccess(false);
+        form.reset();
+      }, 3000);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setIsLoading(false);
+      toast.error(isEthiopic ? 'ስህተት ተከስቷል። እባክዎ ደግመው ይሞክሩ።' : 'Something went wrong. Please try again.');
+    }
   };
 
   return (
