@@ -13,7 +13,13 @@ export default function Reviews() {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-background">
+    <section ref={ref} className="relative py-20 bg-background">
+      {/* Smooth curved top */}
+      <div className="absolute top-0 left-0 right-0 h-20 -translate-y-full overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0,120 C400,40 800,40 1200,120 L1200,120 L0,120 Z" fill="hsl(var(--background))" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 
@@ -52,7 +58,7 @@ export default function Reviews() {
 
         <div className="text-center mt-10">
           <a
-            href="https://g.page/r/nuhas-beauty-garden/review"
+            href="https://www.google.com/search?sca_esv=85948e9693362f74&cs=1&sxsrf=AE3TifNNU-2cTMaI-jOpqI5aTjlhlJYrrw:1766222130390&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E2bFFMxZ1p5m9Pv0PF6EbOsGkmrXkz24b51RjwYMZM39oLD3TtSuQEAdOHldAzgRunIwxyZI_dULZYX22PNiSxW8PzQc4_wmNQgzcMryf6EzlHCy7Q%3D%3D&q=Nuhas+Beauty+Garden+Reviews&sa=X&ved=2ahUKEwj0qrSV6suRAxVTRKQEHb1NFzkQ0bkNegQIJBAE&biw=1366&bih=679&dpr=1"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:text-primary/80 text-sm underline underline-offset-4 transition-colors"

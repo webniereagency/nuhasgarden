@@ -122,6 +122,38 @@
     animation: preloader-exit 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
+  /* Smooth section transitions with organic curves */
+  .section-flow {
+    @apply relative;
+  }
+
+  .section-flow::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-24 pointer-events-none;
+    background: linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 100%);
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  }
+
+  .section-flow::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-24 pointer-events-none;
+    background: linear-gradient(to top, hsl(var(--background)) 0%, transparent 100%);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+
+  /* Section wave dividers */
+  .section-wave-top {
+    @apply absolute top-0 left-0 right-0 overflow-hidden;
+    height: 60px;
+    transform: translateY(-100%);
+  }
+
+  .section-wave-bottom {
+    @apply absolute bottom-0 left-0 right-0 overflow-hidden;
+    height: 60px;
+    transform: translateY(100%) rotate(180deg);
+  }
+
   /* Section animations */
   .reveal {
     opacity: 0;
@@ -136,7 +168,7 @@
 
   /* Cards */
   .service-card {
-    @apply relative overflow-hidden rounded-lg bg-card border border-border/50;
+    @apply relative overflow-hidden rounded-2xl bg-card border border-border/50;
     transition: var(--transition-smooth);
     box-shadow: var(--shadow-soft);
   }
@@ -306,6 +338,15 @@
   }
   50% {
     transform: translateY(-8px);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
   }
 }
 

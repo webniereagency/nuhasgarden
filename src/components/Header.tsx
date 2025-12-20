@@ -34,8 +34,15 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <a href="#home" className="flex-shrink-0">
-          <img src={logo} alt="Nuhas Beauty Garden" className="h-10 md:h-12 w-auto" />
+        <a href="#home" className="flex-shrink-0 group">
+          <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-primary/40 shadow-glow group-hover:border-primary/70 transition-all duration-500">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
+            <img 
+              src={logo} 
+              alt="Nuhas Beauty Garden" 
+              className="w-full h-full object-cover scale-110"
+            />
+          </div>
         </a>
 
         {/* Desktop Navigation */}

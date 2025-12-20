@@ -10,7 +10,13 @@ export default function Contact() {
   const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}`;
 
   return (
-    <section id="contact" ref={ref} className="py-20 bg-secondary/30">
+    <section id="contact" ref={ref} className="relative py-20 bg-secondary/30">
+      {/* Smooth curved top */}
+      <div className="absolute top-0 left-0 right-0 h-16 -translate-y-full overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0,120 C600,40 600,40 1200,120 L1200,120 L0,120 Z" fill="hsl(var(--secondary) / 0.3)" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 
