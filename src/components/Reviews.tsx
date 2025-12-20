@@ -10,6 +10,9 @@ export default function Reviews() {
     { text: t('review.1'), author: t('review.1.author') },
     { text: t('review.2'), author: t('review.2.author') },
     { text: t('review.3'), author: t('review.3.author') },
+    { text: t('review.4'), author: t('review.4.author') },
+    { text: t('review.5'), author: t('review.5.author') },
+    { text: t('review.6'), author: t('review.6.author') },
   ];
 
   return (
