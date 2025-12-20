@@ -43,7 +43,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex items-center gap-4 mb-8">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/nuhas_beauty_garden/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
@@ -52,7 +52,7 @@ export default function Footer() {
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://web.facebook.com/p/Nuhas-Beauty-Garden-100086744814900/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"

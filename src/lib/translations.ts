@@ -39,6 +39,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'review.2.author': 'ሳራ ኤ.',
     'review.3': 'ለሰርግ ፀጉሬን እዚህ አሰራሁ። በጣም ድንቅ ነበር!',
     'review.3.author': 'ሃና ኬ.',
+    'review.4': 'ጥፍሬን በጣም ውብ አድርገው አሰሩልኝ። ሁሌም እዚህ ነው የምመጣው!',
+    'review.4.author': 'ቤዛዊት ገ.',
+    'review.5': 'ለልደቴ ሜካፕ አሰራሁ። ሁሉም ሲያዩኝ ተገረሙ። አመሰግናለሁ!',
+    'review.5.author': 'ፍሬህይወት ም.',
+    'review.6': 'ምርጥ አገልግሎት በተመጣጣኝ ዋጋ። ለጓደኞቼ ሁሉ እመክራለሁ።',
+    'review.6.author': 'ሰላማዊት በ.',
 
     // Services
     'services.title': 'አገልግሎቶቻችን',
@@ -124,6 +130,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'review.2.author': 'Sara E.',
     'review.3': 'Had my wedding hair done here. Absolutely stunning!',
     'review.3.author': 'Hana K.',
+    'review.4': 'They did my nails so beautifully. This is my go-to salon now!',
+    'review.4.author': 'Bezawit G.',
+    'review.5': 'Got my birthday makeup done here. Everyone was amazed. Thank you!',
+    'review.5.author': 'Firehiwot M.',
+    'review.6': 'Best service at affordable prices. I recommend to all my friends.',
+    'review.6.author': 'Selamawit B.',
 
     // Services
     'services.title': 'Our Services',
@@ -209,6 +221,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'review.2.author': 'Sara E.',
     'review.3': 'Rifeensa cidha koo asitti hojjechise. Baay\'ee miidhaga!',
     'review.3.author': 'Hana K.',
+    'review.4': 'Qeensa koo baay\'ee bareedaa godhan. Yeroo hunda asuman dhufa!',
+    'review.4.author': 'Bezawit G.',
+    'review.5': 'Guyyaa dhaloota kootiif meekaappii asitti hojjechise. Namni hundi dinqisiifate!',
+    'review.5.author': 'Firehiwot M.',
+    'review.6': 'Tajaajila gaarii gatii madaalawaa ta\'een. Hiriyyoota koo hundaaf nan gorse.',
+    'review.6.author': 'Selamawit B.',
 
     // Services
     'services.title': 'Tajaajila Keenya',
@@ -294,6 +312,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'review.2.author': 'Sara E.',
     'review.3': 'Timahayga arooska halkan ayaan ka sameeyay. Aad buu u qurxoon!',
     'review.3.author': 'Hana K.',
+    'review.4': 'Cidiyahayga si qurux badan ayay u sameeyeen. Halkan ayaan mar kasta u imaanayaa!',
+    'review.4.author': 'Bezawit G.',
+    'review.5': 'Qurxintaydii maalinta dhalashada halkan ayaan ka sameystay. Qof kasta wuu yaabay!',
+    'review.5.author': 'Firehiwot M.',
+    'review.6': 'Adeeg wanaagsan qiimo jaban. Saaxiibadayda oo dhan waan ku talinayaa.',
+    'review.6.author': 'Selamawit B.',
 
     // Services
     'services.title': 'Adeegyadanada',
@@ -379,6 +403,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'review.2.author': 'ሳራ ኤ.',
     'review.3': 'ጸጉሪ መርዓይ ኣብዚ ገይረ። ኣዝዩ ጽቡቕ!',
     'review.3.author': 'ሃና ኬ.',
+    'review.4': 'ጽፍረይ ኣዝዩ ጽቡቕ ገይሮምለይ። ኩሉ ግዜ ኣብዚ እየ ዝመጽእ!',
+    'review.4.author': 'ቤዛዊት ገ.',
+    'review.5': 'ሜካፕ ዕለት ልደተይ ኣብዚ ገይረ። ኩሉ ሰብ ተገረመ!',
+    'review.5.author': 'ፍረህይወት ም.',
+    'review.6': 'ዝበለጸ ኣገልግሎት ብተመጣጣኒ ዋጋ። ንኹሎም የዕሩኽተይ እምሕጸኖም።',
+    'review.6.author': 'ሰላማዊት በ.',
 
     // Services
     'services.title': 'ኣገልግሎታትና',
@@ -464,6 +494,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'review.2.author': 'Sara E.',
     'review.3': 'Ta bullacha huuphiya hagan oottadis. Keehi loobiis!',
     'review.3.author': 'Hana K.',
+    'review.4': 'Ta xuguntta keehi loobiyaa oottidosona. Ubba wode haa yays!',
+    'review.4.author': 'Bezawit G.',
+    'review.5': 'Ta yeletta gallassaa meekappiya hagan oottadis. Ubba asay malaaleettidosona!',
+    'review.5.author': 'Firehiwot M.',
+    'review.6': 'Keehi loobiya oosoy gatiya giigissidaagan. Ta laggetau ubbau zoraas.',
+    'review.6.author': 'Selamawit B.',
 
     // Services
     'services.title': 'Nu Oosota',
