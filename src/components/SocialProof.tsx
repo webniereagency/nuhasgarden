@@ -7,7 +7,13 @@ export default function SocialProof() {
   const { ref, isInView } = useInView();
 
   return (
-    <section ref={ref} className="py-16 bg-secondary/30">
+    <section ref={ref} className="relative py-16 bg-secondary/30">
+      {/* Smooth curved top */}
+      <div className="absolute top-0 left-0 right-0 h-16 -translate-y-full overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0,120 C300,60 900,60 1200,120 L1200,120 L0,120 Z" fill="hsl(var(--secondary) / 0.3)" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         <div 
           className={`flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 transition-all duration-700 ${

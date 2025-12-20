@@ -35,7 +35,19 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" ref={ref} className="py-20 bg-gradient-burgundy">
+    <section id="services" ref={ref} className="relative py-20 bg-gradient-burgundy">
+      {/* Smooth curved top */}
+      <div className="absolute top-0 left-0 right-0 h-20 -translate-y-full overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0,120 C600,20 600,20 1200,120 L1200,120 L0,120 Z" fill="hsl(var(--burgundy-dark))" />
+        </svg>
+      </div>
+      {/* Smooth curved bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 translate-y-full overflow-hidden rotate-180">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0,120 C600,20 600,20 1200,120 L1200,120 L0,120 Z" fill="hsl(var(--burgundy-dark))" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
           <h2 

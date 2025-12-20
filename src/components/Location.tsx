@@ -9,7 +9,13 @@ export default function Location() {
   const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d985.2!2d38.79199249404405!3d8.992497678064732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNTknMzMuMCJOIDM4wrA0NyczMS42IkU!5e0!3m2!1sen!2set!4v1640000000000!5m2!1sen!2set";
 
   return (
-    <section ref={ref} className="py-20 bg-background">
+    <section ref={ref} className="relative py-20 bg-background">
+      {/* Smooth curved top */}
+      <div className="absolute top-0 left-0 right-0 h-16 -translate-y-full overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0,120 C400,80 800,40 1200,120 L1200,120 L0,120 Z" fill="hsl(var(--background))" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 

@@ -22,7 +22,13 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" ref={ref} className="py-20 bg-background">
+    <section id="gallery" ref={ref} className="relative py-20 bg-background">
+      {/* Smooth curved top */}
+      <div className="absolute top-0 left-0 right-0 h-20 -translate-y-full overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0,120 C300,80 900,40 1200,120 L1200,120 L0,120 Z" fill="hsl(var(--background))" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
           <h2 

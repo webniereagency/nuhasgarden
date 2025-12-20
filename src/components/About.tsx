@@ -14,7 +14,13 @@ export default function About() {
   ];
 
   return (
-    <section id="about" ref={ref} className="py-20 bg-secondary/20">
+    <section id="about" ref={ref} className="relative py-20 bg-secondary/20">
+      {/* Smooth curved top */}
+      <div className="absolute top-0 left-0 right-0 h-16 -translate-y-full overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0,120 C200,60 1000,60 1200,120 L1200,120 L0,120 Z" fill="hsl(var(--secondary) / 0.2)" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Image */}
