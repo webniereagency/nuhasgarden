@@ -1,13 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { LanguageProvider } from '@/contexts/LanguageContext';
+import Preloader from '@/components/Preloader';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import SocialProof from '@/components/SocialProof';
+import Reviews from '@/components/Reviews';
+import Services from '@/components/Services';
+import Gallery from '@/components/Gallery';
+import About from '@/components/About';
+import BookingForm from '@/components/BookingForm';
+import Location from '@/components/Location';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <LanguageProvider>
+      {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      
+      <div className={isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}>
+        <Header />
+        <main>
+          <Hero />
+          <SocialProof />
+          <Reviews />
+          <Services />
+          <Gallery />
+          <About />
+          <BookingForm />
+          <Location />
+          <Contact />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </LanguageProvider>
   );
 };
 
