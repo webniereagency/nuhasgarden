@@ -34,6 +34,15 @@ import ethiopianBraids3 from '@/assets/styles/ethiopian-braids-3.png';
 import ethiopianBraids4 from '@/assets/styles/ethiopian-braids-4.png';
 import ethiopianBraids5 from '@/assets/styles/ethiopian-braids-5.png';
 import cornrows1 from '@/assets/styles/cornrows-1.png';
+import knotlessBraids1 from '@/assets/styles/knotless-braids-1.png';
+import knotlessBraids2 from '@/assets/styles/knotless-braids-2.png';
+import twistBraids1 from '@/assets/styles/twist-braids-1.png';
+import twistBraids2 from '@/assets/styles/twist-braids-2.png';
+import bridal1 from '@/assets/styles/bridal-1.png';
+import bridal2 from '@/assets/styles/bridal-2.png';
+import bridal3 from '@/assets/styles/bridal-3.png';
+import bridal4 from '@/assets/styles/bridal-4.png';
+import bridal5 from '@/assets/styles/bridal-5.png';
 
 interface StyleService {
   id: string;
@@ -73,9 +82,9 @@ const categories: StyleCategory[] = [
         descKey: 'styles.hair.cornrows.desc', 
         images: [cornrows1] 
       },
-      { id: 'knotless', nameKey: 'styles.hair.knotless.name', descKey: 'styles.hair.knotless.desc', images: ['https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=600&fit=crop'] },
-      { id: 'twists', nameKey: 'styles.hair.twists.name', descKey: 'styles.hair.twists.desc', images: ['https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=600&fit=crop'] },
-      { id: 'bridal', nameKey: 'styles.hair.bridal.name', descKey: 'styles.hair.bridal.desc', images: ['https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=600&fit=crop'] },
+      { id: 'knotless', nameKey: 'styles.hair.knotless.name', descKey: 'styles.hair.knotless.desc', images: [knotlessBraids1, knotlessBraids2] },
+      { id: 'twists', nameKey: 'styles.hair.twists.name', descKey: 'styles.hair.twists.desc', images: [twistBraids1, twistBraids2] },
+      { id: 'bridal', nameKey: 'styles.hair.bridal.name', descKey: 'styles.hair.bridal.desc', images: [bridal1, bridal2, bridal3, bridal4, bridal5] },
     ],
   },
   {
