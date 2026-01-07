@@ -43,6 +43,17 @@ import bridal2 from '@/assets/styles/bridal-2.png';
 import bridal3 from '@/assets/styles/bridal-3.png';
 import bridal4 from '@/assets/styles/bridal-4.png';
 import bridal5 from '@/assets/styles/bridal-5.png';
+// Makeup images
+import proMakeup1 from '@/assets/styles/pro-makeup-1.png';
+import proMakeup2 from '@/assets/styles/pro-makeup-2.png';
+import proMakeup3 from '@/assets/styles/pro-makeup-3.png';
+import bridalMakeup1 from '@/assets/styles/bridal-makeup-1.png';
+import bridalMakeup2 from '@/assets/styles/bridal-makeup-2.png';
+import bridalMakeup3 from '@/assets/styles/bridal-makeup-3.png';
+import naturalMakeup1 from '@/assets/styles/natural-makeup-1.png';
+import naturalMakeup2 from '@/assets/styles/natural-makeup-2.png';
+import naturalMakeup3 from '@/assets/styles/natural-makeup-3.png';
+import naturalMakeup4 from '@/assets/styles/natural-makeup-4.png';
 
 interface StyleService {
   id: string;
@@ -92,11 +103,9 @@ const categories: StyleCategory[] = [
     nameKey: 'styles.makeup.category',
     icon: Sparkles,
     services: [
-      { id: 'pro', nameKey: 'styles.makeup.pro.name', descKey: 'styles.makeup.pro.desc', images: ['https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=600&fit=crop'] },
-      { id: 'bridal', nameKey: 'styles.makeup.bridal.name', descKey: 'styles.makeup.bridal.desc', images: ['https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&h=600&fit=crop'] },
-      { id: 'evening', nameKey: 'styles.makeup.evening.name', descKey: 'styles.makeup.evening.desc', images: ['https://images.unsplash.com/photo-1503236823255-94609f598e71?w=600&h=600&fit=crop'] },
-      { id: 'natural', nameKey: 'styles.makeup.natural.name', descKey: 'styles.makeup.natural.desc', images: ['https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=600&h=600&fit=crop'] },
-      { id: 'trial', nameKey: 'styles.makeup.trial.name', descKey: 'styles.makeup.trial.desc', images: ['https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=600&fit=crop'] },
+      { id: 'pro', nameKey: 'styles.makeup.pro.name', descKey: 'styles.makeup.pro.desc', images: [proMakeup1, proMakeup2, proMakeup3] },
+      { id: 'bridal', nameKey: 'styles.makeup.bridal.name', descKey: 'styles.makeup.bridal.desc', images: [bridalMakeup1, bridalMakeup2, bridalMakeup3] },
+      { id: 'natural', nameKey: 'styles.makeup.natural.name', descKey: 'styles.makeup.natural.desc', images: [naturalMakeup1, naturalMakeup2, naturalMakeup3, naturalMakeup4] },
     ],
   },
   {
