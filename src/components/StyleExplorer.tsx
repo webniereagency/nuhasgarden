@@ -65,6 +65,17 @@ import eyelashExtensions1 from '@/assets/styles/eyelash-extensions-1.png';
 import eyelashExtensions2 from '@/assets/styles/eyelash-extensions-2.png';
 import lashLift1 from '@/assets/styles/lash-lift-1.png';
 import lashLift2 from '@/assets/styles/lash-lift-2.png';
+// Skin care images
+import classicFacial1 from '@/assets/styles/classic-facial-1.png';
+import classicFacial2 from '@/assets/styles/classic-facial-2.png';
+import classicFacial3 from '@/assets/styles/classic-facial-3.png';
+import deepCleansing1 from '@/assets/styles/deep-cleansing-1.png';
+import deepCleansing2 from '@/assets/styles/deep-cleansing-2.png';
+import deepCleansing3 from '@/assets/styles/deep-cleansing-3.png';
+import hydratingFacial1 from '@/assets/styles/hydrating-facial-1.png';
+import hydratingFacial2 from '@/assets/styles/hydrating-facial-2.png';
+import acneTreatment1 from '@/assets/styles/acne-treatment-1.png';
+import acneTreatment2 from '@/assets/styles/acne-treatment-2.png';
 
 interface StyleService {
   id: string;
@@ -135,10 +146,10 @@ const categories: StyleCategory[] = [
     nameKey: 'styles.skin.category',
     icon: Flower2,
     services: [
-      { id: 'classic', nameKey: 'styles.skin.classic.name', descKey: 'styles.skin.classic.desc', images: ['https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=600&fit=crop'] },
-      { id: 'deep', nameKey: 'styles.skin.deep.name', descKey: 'styles.skin.deep.desc', images: ['https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&h=600&fit=crop'] },
-      { id: 'hydrating', nameKey: 'styles.skin.hydrating.name', descKey: 'styles.skin.hydrating.desc', images: ['https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=600&fit=crop'] },
-      { id: 'acne', nameKey: 'styles.skin.acne.name', descKey: 'styles.skin.acne.desc', images: ['https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&h=600&fit=crop'] },
+      { id: 'classic', nameKey: 'styles.skin.classic.name', descKey: 'styles.skin.classic.desc', images: [classicFacial1, classicFacial2, classicFacial3] },
+      { id: 'deep', nameKey: 'styles.skin.deep.name', descKey: 'styles.skin.deep.desc', images: [deepCleansing1, deepCleansing2, deepCleansing3] },
+      { id: 'hydrating', nameKey: 'styles.skin.hydrating.name', descKey: 'styles.skin.hydrating.desc', images: [hydratingFacial1, hydratingFacial2] },
+      { id: 'acne', nameKey: 'styles.skin.acne.name', descKey: 'styles.skin.acne.desc', images: [acneTreatment1, acneTreatment2] },
       { id: 'brightening', nameKey: 'styles.skin.brightening.name', descKey: 'styles.skin.brightening.desc', images: ['https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=600&fit=crop'] },
     ],
   },
