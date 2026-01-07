@@ -54,6 +54,17 @@ import naturalMakeup1 from '@/assets/styles/natural-makeup-1.png';
 import naturalMakeup2 from '@/assets/styles/natural-makeup-2.png';
 import naturalMakeup3 from '@/assets/styles/natural-makeup-3.png';
 import naturalMakeup4 from '@/assets/styles/natural-makeup-4.png';
+// Eyebrow & Lash images
+import eyebrowThreading1 from '@/assets/styles/eyebrow-threading-1.png';
+import eyebrowThreading2 from '@/assets/styles/eyebrow-threading-2.png';
+import eyebrowThreading3 from '@/assets/styles/eyebrow-threading-3.png';
+import eyebrowTinting1 from '@/assets/styles/eyebrow-tinting-1.png';
+import eyebrowTinting2 from '@/assets/styles/eyebrow-tinting-2.png';
+import eyebrowTinting3 from '@/assets/styles/eyebrow-tinting-3.png';
+import eyelashExtensions1 from '@/assets/styles/eyelash-extensions-1.png';
+import eyelashExtensions2 from '@/assets/styles/eyelash-extensions-2.png';
+import lashLift1 from '@/assets/styles/lash-lift-1.png';
+import lashLift2 from '@/assets/styles/lash-lift-2.png';
 
 interface StyleService {
   id: string;
@@ -113,10 +124,10 @@ const categories: StyleCategory[] = [
     nameKey: 'styles.brows.category',
     icon: Eye,
     services: [
-      { id: 'threading', nameKey: 'styles.brows.threading.name', descKey: 'styles.brows.threading.desc', images: ['https://images.unsplash.com/photo-1522337094846-8a818192de1f?w=600&h=600&fit=crop'] },
-      { id: 'tinting', nameKey: 'styles.brows.tinting.name', descKey: 'styles.brows.tinting.desc', images: ['https://images.unsplash.com/photo-1588123190131-1c3fac394f4b?w=600&h=600&fit=crop'] },
-      { id: 'extensions', nameKey: 'styles.brows.extensions.name', descKey: 'styles.brows.extensions.desc', images: ['https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=600&h=600&fit=crop'] },
-      { id: 'lift', nameKey: 'styles.brows.lift.name', descKey: 'styles.brows.lift.desc', images: ['https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&h=600&fit=crop'] },
+      { id: 'threading', nameKey: 'styles.brows.threading.name', descKey: 'styles.brows.threading.desc', images: [eyebrowThreading1, eyebrowThreading2, eyebrowThreading3] },
+      { id: 'tinting', nameKey: 'styles.brows.tinting.name', descKey: 'styles.brows.tinting.desc', images: [eyebrowTinting1, eyebrowTinting2, eyebrowTinting3] },
+      { id: 'extensions', nameKey: 'styles.brows.extensions.name', descKey: 'styles.brows.extensions.desc', images: [eyelashExtensions1, eyelashExtensions2] },
+      { id: 'lift', nameKey: 'styles.brows.lift.name', descKey: 'styles.brows.lift.desc', images: [lashLift1, lashLift2] },
     ],
   },
   {
