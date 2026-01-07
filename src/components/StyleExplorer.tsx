@@ -76,6 +76,15 @@ import hydratingFacial1 from '@/assets/styles/hydrating-facial-1.png';
 import hydratingFacial2 from '@/assets/styles/hydrating-facial-2.png';
 import acneTreatment1 from '@/assets/styles/acne-treatment-1.png';
 import acneTreatment2 from '@/assets/styles/acne-treatment-2.png';
+// Nail images
+import classicManicure1 from '@/assets/styles/classic-manicure-1.png';
+import classicManicure2 from '@/assets/styles/classic-manicure-2.png';
+import gelManicure1 from '@/assets/styles/gel-manicure-1.png';
+import gelManicure2 from '@/assets/styles/gel-manicure-2.png';
+// Body treatment images
+import bodyWrap1 from '@/assets/styles/body-wrap-1.png';
+import bodyWrap2 from '@/assets/styles/body-wrap-2.png';
+import bodyWrap3 from '@/assets/styles/body-wrap-3.png';
 
 interface StyleService {
   id: string;
@@ -161,7 +170,7 @@ const categories: StyleCategory[] = [
       { id: 'scrub', nameKey: 'styles.body.scrub.name', descKey: 'styles.body.scrub.desc', images: ['https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=600&fit=crop'] },
       { id: 'massage', nameKey: 'styles.body.massage.name', descKey: 'styles.body.massage.desc', images: ['https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&h=600&fit=crop'] },
       { id: 'aroma', nameKey: 'styles.body.aroma.name', descKey: 'styles.body.aroma.desc', images: ['https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&h=600&fit=crop'] },
-      { id: 'wrap', nameKey: 'styles.body.wrap.name', descKey: 'styles.body.wrap.desc', images: ['https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=600&fit=crop'] },
+      { id: 'wrap', nameKey: 'styles.body.wrap.name', descKey: 'styles.body.wrap.desc', images: [bodyWrap1, bodyWrap2, bodyWrap3] },
     ],
   },
   {
@@ -169,8 +178,8 @@ const categories: StyleCategory[] = [
     nameKey: 'styles.nails.category',
     icon: Hand,
     services: [
-      { id: 'classic', nameKey: 'styles.nails.classic.name', descKey: 'styles.nails.classic.desc', images: ['https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=600&fit=crop'] },
-      { id: 'gel', nameKey: 'styles.nails.gel.name', descKey: 'styles.nails.gel.desc', images: ['https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600&h=600&fit=crop'] },
+      { id: 'classic', nameKey: 'styles.nails.classic.name', descKey: 'styles.nails.classic.desc', images: [classicManicure1, classicManicure2] },
+      { id: 'gel', nameKey: 'styles.nails.gel.name', descKey: 'styles.nails.gel.desc', images: [gelManicure1, gelManicure2] },
       { id: 'pedicure', nameKey: 'styles.nails.pedicure.name', descKey: 'styles.nails.pedicure.desc', images: ['https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&h=600&fit=crop'] },
       { id: 'art', nameKey: 'styles.nails.art.name', descKey: 'styles.nails.art.desc', images: ['https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=600&fit=crop'] },
     ],
