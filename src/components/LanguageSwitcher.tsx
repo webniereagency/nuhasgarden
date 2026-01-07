@@ -1,26 +1,57 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ChevronDown, Hand } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languages, Language } from '@/lib/translations';
 
 export default function LanguageSwitcher() {
   const { language, setLanguage, isEthiopic } = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
   const [showPointer, setShowPointer] = useState(true);
+  
+  // Check if user has seen the dropdown before
+  const hasSeenDropdown = typeof window !== 'undefined' && localStorage.getItem('hasSeenLanguageDropdown');
+  const [isOpen, setIsOpen] = useState(!hasSeenDropdown);
 
   const currentLang = languages.find(l => l.code === language);
 
+  const closeDropdown = useCallback(() => {
+    setIsOpen(false);
+    setShowPointer(false);
+    localStorage.setItem('hasSeenLanguageDropdown', 'true');
+  }, []);
+
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Hide pointer after 10 seconds
+    const pointerTimer = setTimeout(() => {
       setShowPointer(false);
     }, 10000);
-    return () => clearTimeout(timer);
-  }, []);
+    
+    // Auto-close dropdown after 5 seconds if it was auto-opened
+    if (!hasSeenDropdown) {
+      const autoCloseTimer = setTimeout(() => {
+        closeDropdown();
+      }, 5000);
+      
+      // Close on scroll
+      const handleScroll = () => {
+        closeDropdown();
+      };
+      window.addEventListener('scroll', handleScroll, { once: true });
+      
+      return () => {
+        clearTimeout(pointerTimer);
+        clearTimeout(autoCloseTimer);
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+    
+    return () => clearTimeout(pointerTimer);
+  }, [hasSeenDropdown, closeDropdown]);
 
   const handleSelect = (code: Language) => {
     setLanguage(code);
     setIsOpen(false);
     setShowPointer(false);
+    localStorage.setItem('hasSeenLanguageDropdown', 'true');
   };
 
   return (

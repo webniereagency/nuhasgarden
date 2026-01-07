@@ -223,7 +223,6 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
             src={img}
             alt={`${alt} ${idx + 1}`}
             className="w-full h-full object-cover flex-shrink-0"
-            loading="lazy"
           />
         ))}
       </div>
@@ -371,6 +370,30 @@ export default function StyleExplorer() {
     images: string[];
   } | null>(null);
 
+  // Preload all images on component mount
+  useEffect(() => {
+    categories.forEach(category => {
+      category.services.forEach(service => {
+        service.images.forEach(src => {
+          const img = new Image();
+          img.src = src;
+        });
+      });
+    });
+  }, []);
+
+  // Handle accordion value change to scroll into view
+  const handleAccordionChange = (value: string) => {
+    if (value) {
+      setTimeout(() => {
+        const element = document.querySelector(`[data-state="open"][data-value="${value}"]`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
+
   const handleBookStyle = (serviceName: string) => {
     setSelectedService(null);
     
@@ -435,13 +458,14 @@ export default function StyleExplorer() {
             isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-4" onValueChange={handleAccordionChange}>
             {categories.map((category, categoryIndex) => {
               const Icon = category.icon;
               return (
                 <AccordionItem 
                   key={category.id} 
                   value={category.id}
+                  data-value={category.id}
                   className="border border-border/50 rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm"
                 >
                   <AccordionTrigger 
