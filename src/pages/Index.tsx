@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { LanguageProvider } from '@/contexts/LanguageContext';
 import Preloader from '@/components/Preloader';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -18,7 +17,7 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <LanguageProvider>
+    <>
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       
       <div className={isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}>
@@ -37,7 +36,7 @@ const Index = () => {
         </main>
         <Footer />
       </div>
-    </LanguageProvider>
+    </>
   );
 };
 
