@@ -6,6 +6,7 @@ import Hero from '@/components/Hero';
 import SocialProof from '@/components/SocialProof';
 import Reviews from '@/components/Reviews';
 import Services from '@/components/Services';
+import StyleExplorer from '@/components/StyleExplorer';
 import Gallery from '@/components/Gallery';
 import About from '@/components/About';
 import BookingForm from '@/components/BookingForm';
@@ -27,6 +28,7 @@ const Index = () => {
           <SocialProof />
           <Reviews />
           <Services />
+          <StyleExplorer />
           <Gallery />
           <About />
           <BookingForm />
